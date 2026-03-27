@@ -3,7 +3,7 @@ def simple_average(quantity_of_grades):
     for i in range(1, quantity_of_grades + 1):
         while True:
             try:
-                grade = float(input(f"grade {i}: "))
+                grade = float(input(f"grade {i}:\n"))
                 if grade >= 0:
                     break
                 else:
@@ -19,7 +19,7 @@ def weighted_average(quantity_of_grades):
     for i in range(1, quantity_of_grades + 1):
         while True:
             try:
-                weight = float(input(f"weight of grade {i}: "))
+                weight = float(input(f"weight of grade {i}:\n"))
                 if weight > 0:
                     break
                 else:
@@ -29,7 +29,7 @@ def weighted_average(quantity_of_grades):
         sum_of_weights = sum_of_weights + weight
         while True:
             try:
-                grade = float(input(f"grade {i}: "))
+                grade = float(input(f"grade {i}:\n"))
                 if grade >= 0:
                     break
                 else:
@@ -42,7 +42,7 @@ def weighted_average(quantity_of_grades):
 while True:
     while True:
         try:
-            quantity_of_grades = int(input("type the quantity of grades: "))
+            quantity_of_grades = int(input("type the quantity of grades:\n"))
             if quantity_of_grades >= 1:
                 break
             else:
@@ -51,9 +51,9 @@ while True:
             print("Please, type a positive integer number.")
 
     while True:
-        average_type = str(input("Insert the type of average ('s' for simple and 'p' for weighted): ")).strip().lower()
-        if average_type != "s" and average_type != "p":
-            print("please, type 's' or 'p'.")
+        average_type = str(input("Insert the type of average ('s' for simple and 'w' for weighted):\n")).strip().lower()
+        if average_type != "s" and average_type != "w":
+            print("please, type 's' or 'w'.")
         else:
             break
 

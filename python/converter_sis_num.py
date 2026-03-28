@@ -64,6 +64,7 @@ def hexadecimal_input(h):
         d = d + vh * (16 ** i)
     b, o, _ = decimal_input(d)
     print("decimal: ",d, "\noctal: ", o, "\nbinário: ", b)
+
 # muda o valor da variável após cada loop para decidir se continua ou não.
 def continuar():
     while True:
@@ -80,33 +81,33 @@ def continuar():
 # inicia o programa
 print("Olá, bem vindo ao conversor de números!")
 cont = 1 # define continuar como 1
-while cont == 1:
+while cont == 1: # enquanto cont permanecer como 1, o programa se mantém em execução
 
     # define o tipo de conversão a ser feito e chama a função correta
     tipo = str(input("a partir de qual sistema será feita a conversão?\nDigite 2 ou b para binário, 8 ou o para octal,\n16 ou h para hexadecimal e 10 ou d para decimal:\n")).lower().lstrip()
     if tipo == "d" or tipo == "10":
             
-        # recebe o valor a ser convertido
+        # lida com conversões partindo da base decimal
         while True:
             try: # valida se o input é um inteiro
                 d = int(input("digite o valor: "))
-                if d >= 0: # filtra valores negativos
-                    b, o, h = decimal_input(d) #chama a função para entradas decimais
+                if d >= 0: # filtra valores negativos.
+                    b, o, h = decimal_input(d) # chama a função para entradas decimais
                     print("binário: ",b, "\noctal: ", o, "\nhexadecimal: ", h)
                     break # encerra o while True mais próximo acima
                 else:
                     print("conversão de valores menores que 0 indisponível")
-            except ValueError: #
+            except ValueError: # lida com entradas que não sejam inteiros
                 print("Por favor, digite um número natural.")
-        cont = continuar()
+        cont = continuar() # chama a função que pode mudar o valor de 'cont' para decidir se o programa será ou não executado novamente
 
-    elif tipo == "b" or tipo == "2":
-        
+    elif tipo == "b" or tipo == "2":  
+        # lida com conversões partindo da base binária
         while True:
-            try:   
+            try: # valida se o input é um inteiro
                 b = int(input("digite o valor: "))
-                if b >= 0 and all(c in "01" for c in str(b)):   
-                    resultado = binary_input(str(b))
+                if b >= 0 and all(c in "01" for c in str(b)): # valida se o input só contém 0s e 1s 
+                    resultado = binary_input(str(b)) # chama a função para entradas binárias
                     break
                 elif b >= 0:
                     print("por favor, digite um número binário.")
@@ -117,11 +118,11 @@ while cont == 1:
         cont = continuar()
 
     elif tipo == "o" or tipo == "8":
-        
+        # lida com conversões partindo da base octal
         while True:
             try:
                 o = int(input("digite o valor: "))
-                if o >= 0 and all(c in "01234567" for c in str(o)):   
+                if o >= 0 and all(c in "01234567" for c in str(o)): # valida se o input só contém dígitos de 0 a 7
                     resultado = octal_input(str(o))
                     break
                 elif o >= 0:
@@ -133,10 +134,10 @@ while cont == 1:
         cont = continuar()
 
     elif tipo == "h" or tipo == "16":
-        
+        # lida com conversões partindo da base hexadecimal
         while True:
             h = str(input("digite o valor: ")).lstrip().upper()
-            if all(c in "0123456789ABCDEF" for c in h):  
+            if all(c in "0123456789ABCDEF" for c in h): # valida se o input só contém dígitos de 0 a 9 e A a F
                 resultado = hexadecimal_input(h)
                 break
             else:
@@ -144,5 +145,6 @@ while cont == 1:
         cont = continuar()
     else:
         print("sistema numérico inválido")
-else:
+
+else: # se 'cont' for 0, ou diferente de 1, imprime a saída abaixo e finaliza a execução do programa(somente a primeira opção deve ocorrer no programa)
     print("Tenha um bom dia (:")

@@ -136,7 +136,7 @@ while cont == 1: # enquanto cont permanecer como 1, o programa se mantém em exe
     elif tipo == "h" or tipo == "16":
         # lida com conversões partindo da base hexadecimal
         while True:
-            h = str(input("digite o valor: ")).lstrip().upper()
+            h = str(input("digite o valor: ")).strip().upper()
             if all(c in "0123456789ABCDEF" for c in h): # valida se o input só contém dígitos de 0 a 9 e A a F
                 resultado = hexadecimal_input(h)
                 break

@@ -28,7 +28,7 @@ int main(){
         cin >> fig_id;
         //ainda para cada figurinha individual, compara o id com as posições existentes no álbum
         //se for um número que existe no álbum, marca o elemento de índice correspondente no vetor como 1
-        if (fig_id > 0 && fig_id <= 10){
+        if (fig_id > 0 && fig_id <= n_total_fig){
             album[fig_id - 1] = true;
         }
         //se não for um número entre 1 e "n_total_fig", imprime "figurinha inválida"

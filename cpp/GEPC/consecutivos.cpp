@@ -41,13 +41,13 @@ int main(){
             ++seq_atual;
         }
     }
-    //com cada sequência tendo seus pontos contados no vetor pontos_da_sequencia, vemos qual das sequências tem maior pontuação e atribuimos o valor dessa pontuação ao valor da pontuação final
+    //com cada sequência tendo seus pontos contados no vetor pontos_da_sequencia, verifica qual das sequências tem maior pontuação e atribui o valor dessa pontuação ao valor da pontuação final
     pontos = pontos_da_sequencia[0];
     for(int i = 0; i < n; ++i){
         if(pontos_da_sequencia[i] > pontos){
             pontos = pontos_da_sequencia[i];
         }
     }
-    //por fim, imprimimos o valor da pontuação total
+    //por fim, imprime o valor da pontuação total
     cout << "pontos:\n" << pontos << endl;
 }

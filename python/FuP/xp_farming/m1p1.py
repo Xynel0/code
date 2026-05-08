@@ -1,31 +1,27 @@
 # recebe o valor a ser retirado e o armazena em "valor"
 valor = int(input("insira o valor a ser retirado: "))
 
-# calcula quantas notas de cada tipo são necessárias
+# ========================= calcula quantas notas de cada tipo são necessárias =========================
 
 #lida com notas de 100
 quantidade_cem = valor // 100 # determina quantas notas de 100 serão entregues sem ultrapassar o valor.
 valor = valor % 100 # muda "valor" para um novo valor descontando as notas de 100 que serão entregues
 
-#lida com notas de 50
-quantidade_cinquenta = valor // 50 # determina quantas notas de 50 serão entregues sem ultrapassar o novo valor.
-valor = valor % 50 # muda "valor" para um novo valor descontando as notas de 50 que serão entregues
+#lógica análoga para os demais valores
+quantidade_cinquenta = valor // 50
+valor = valor % 50
 
-#lida com notas de 20
-quantidade_vinte = valor // 20 # determina quantas notas de 20 serão entregues sem ultrapassar o novo valor.
-valor = valor % 20 # muda "valor" para um novo valor descontando as notas de 20 que serão entregues
+quantidade_vinte = valor // 20
+valor = valor % 20
 
-#lida com notas de 10
-quantidade_dez = valor // 10 # determina quantas notas de 10 serão entregues sem ultrapassar o novo valor.
-valor = valor % 10 # muda "valor" para um novo valor descontando as notas de 10 que serão entregues
+quantidade_dez = valor // 10
+valor = valor % 10
 
-#lida com notas de 5
-quantidade_cinco = valor // 5 # determina quantas notas de 5 serão entregues sem ultrapassar o novo valor.
-valor = valor % 5 # muda "valor" para um novo valor descontando as notas de 5 que serão entregues
+quantidade_cinco = valor // 5
+valor = valor % 5
 
-#lida com notas de 2
-quantidade_dois = valor // 2 # determina quantas notas de 2 serão entregues sem ultrapassar o novo valor.
-valor = valor % 2 # muda "valor" para um novo valor descontando as notas de 2 que serão entregues
+quantidade_dois = valor // 2
+valor = valor % 2
 
 #lida com moedas de 1
 quantidade_um = valor # após a entrega das notas de 2, todo o valor restante será entregue em moedas de 1

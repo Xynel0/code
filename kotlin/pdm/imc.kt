@@ -1,7 +1,3 @@
-import java.time.LocalDate
-import java.time.format.TextStyle
-import java.util.Locale
-
 fun imc(args: Array<String>): String {
     var peso = args[0].toDouble()
     var altura = args[1].toDouble()

@@ -33,11 +33,14 @@ p = criar_no(5, criar_no(8, criar_no(13, criar_no(2, NULL))));
 
 int main() {
     resp = p->valor;
-    while(p->prox != NULL){
+    while(1){
         if(abs(p->valor - k) < abs(resp - k)){
             resp = p->valor;
         }
-        p = p->prox;
+        if(p->prox == NULL){
+          	break;
+        }
+      	p = p->prox;
     }
     printf("%d\n", resp);
 }

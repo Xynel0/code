@@ -1,0 +1,50 @@
+// inclua as bibliotecas e definas as variáveis globais de entrada e saída do modelo
+#include <stdlib.h>
+#include <stdio.h>
+#include <math.h>
+
+typedef struct NoLista{
+	int valor;
+	struct NoLista * prox;
+} NoLista;
+
+NoLista * criar_no(int valor, NoLista * prox){
+	NoLista * no = malloc(sizeof(NoLista));
+	no->valor = valor;
+	no->prox = prox;
+	return no;
+}
+
+NoLista * p;
+
+
+/*
+a inicialização será feita no sistema de tarefas
+p = criar_no(5, criar_no(8, criar_no(13, criar_no(2, NULL))));
+*/
+
+
+// -- escreva seu código abaixo, não altere esta linha
+
+
+
+int main() {
+    NoLista * atual = p;
+    NoLista * antatual = p;
+    NoLista * menor = p;
+    NoLista * antmenor = p;
+
+    while (atual != NULL){
+        if(atual->valor < menor->valor){
+            menor = atual;
+            antmenor = antatual;
+        }
+        antatual = atual;
+        atual = atual->prox;
+    }
+    if(menor != p){
+        antmenor->prox = menor->prox;
+        menor->prox = p;
+        p = menor;
+    }
+}

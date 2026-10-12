@@ -7,6 +7,9 @@ void recebe_int(char msg[], int * elemento){ //recebe uma mensagem e um ponteiro
 }
 
 void printa_lista(int * A, int n){ //recebe uma lista e seu tamanho e a imprime
+    if (n == 0){
+        return;
+    }
     printf("[");
     for (int i = 0; i < n; ++i){
         if (i == n -1){

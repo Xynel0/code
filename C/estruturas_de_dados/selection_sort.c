@@ -21,7 +21,7 @@ void printa_lista(int * A, int n){ //recebe uma lista e seu tamanho e a imprime
 }
 
 
-//============================================= SELEECTION SORT =============================================
+//============================================= SELECTION SORT =============================================
 // invariante: A[0,..., i-1] está ordenada com os menores i elementos de A
 void selection_sort (int * A, int n){           //  Entradas: lista e tamanho
     for(int i = 0; i < n; ++i){                 //  lê item por item da lista

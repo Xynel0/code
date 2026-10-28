@@ -88,6 +88,6 @@ int main(){
         }
     }
 
-    printa_lista(i_lista);   //imprime a lista ordenada
+    printa_lista(i_lista);   //imprime a lista encadeada
     libera_lista(i_lista);   //libera a memória alocada pela lista antes de encerrar o programa
 }

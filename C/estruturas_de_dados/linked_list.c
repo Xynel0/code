@@ -37,6 +37,15 @@ void printa_lista(no * item){ //recebe uma lista e a imprime
     printf("NULL\n");                       // pra ficar bonito, imprime null e uma quebra de linha.
 }
 
+void libera_lista(no * item){ //recebe uma lista libera o espaço ocupado por ela
+    while (item != NULL){
+        no * ant = item;                    // guarda o endereço do nó atual para conseguir liberar
+        item = item-> prox;                 // faz "item" apontar para o nó seguinte
+        free(ant);                          // libera o nó anterior
+    };                                      // eventualmente o próximo de algum nó será nulo. isso encerrará o while
+}
+
+
 
 
 // ============================= função que cria um nó (retorna um ponteiro para o nó recém criado) =============================
@@ -57,8 +66,8 @@ int main(){
     int n;
     recebe_int("Insira o tamanho da lista:\n", &n);
     
-    no * i_lista;                                           // cria um ponteiro "i-lista" para um nó. Guardará o início da lista.
-    no * f_lista;                                           // cria um ponteiro "f-lista" para um nó. Guardará o fim da lista.
+    no * i_lista = NULL;                                    // cria um ponteiro "i-lista" para um nó. Guardará o início da lista.
+    no * f_lista = NULL;                                    // cria um ponteiro "f-lista" para um nó. Guardará o fim da lista.
     for(int i = 0; i < n; ++i){                             // itera n vezes, criando e encadeando os nós
         int valor_do_no;                                    // variável para receber o valor a ser posto no nó
 
@@ -80,4 +89,5 @@ int main(){
     }
 
     printa_lista(i_lista);   //imprime a lista ordenada
+    libera_lista(i_lista);   //libera a memória alocada pela lista antes de encerrar o programa
 }

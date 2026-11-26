@@ -38,6 +38,9 @@ int resp;
 
 
 void verifica_cheia(NoArv * x){
+    if (resp == 0){
+        return;
+    }
     if (x == NULL){
         return;
     }
